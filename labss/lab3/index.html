@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма студентської картки</title>
+</head>
+<body>
+
+<h1>ФОРМА СТУДЕНТСЬКОЇ КАРТКИ</h1>
+
+<form>
+
+    <fieldset>
+        <legend><strong>Особиста інформація</strong></legend>
+
+        <label>
+            Повне ім’я:<br>
+            <input type="text" name="fullname" placeholder="Введіть повне ім’я">
+        </label><br><br>
+
+        <label>
+            Email:<br>
+            <input type="email" name="email" placeholder="Введіть email">
+        </label><br><br>
+
+        <label>
+            Пароль:<br>
+            <input type="password" name="password" placeholder="Введіть пароль">
+        </label><br><br>
+
+        <label>
+            Вік:<br>
+            <input type="number" name="age">
+        </label><br><br>
+
+        <label>
+            Дата народження:<br>
+            <input type="date" name="birthdate">
+        </label><br><br>
+
+        <p>Стать:</p>
+        <label>
+            <input type="radio" name="gender" value="male"> Чоловіча
+        </label><br>
+        <label>
+            <input type="radio" name="gender" value="female"> Жіноча
+        </label><br>
+        <label>
+            <input type="radio" name="gender" value="other"> Інше
+        </label><br><br>
+
+        <p>Мови, якими володієте:</p>
+        <label>
+            <input type="checkbox" name="language" value="english"> Англійська
+        </label><br>
+        <label>
+            <input type="checkbox" name="language" value="spanish"> Іспанська
+        </label><br>
+        <label>
+            <input type="checkbox" name="language" value="french"> Французька
+        </label><br><br>
+
+        <label>
+            Країна:<br>
+            <select name="country">
+                <option value="">Оберіть країну</option>
+                <option value="ukraine">Україна</option>
+                <option value="poland">Польща</option>
+                <option value="germany">Німеччина</option>
+                <option value="usa">США</option>
+            </select>
+        </label>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><strong>Предмети коледжу</strong></legend>
+
+        <label>
+            Оберіть предмети:<br>
+            <select name="subjects" multiple size="5">
+                <option>Математика</option>
+                <option>Комп’ютерні науки</option>
+                <option>Фізика</option>
+                <option>Хімія</option>
+                <option>Англійська мова</option>
+            </select>
+        </label><br><br>
+
+        <label>
+            Оцініть інтерес до комп’ютерних наук:<br>
+            <input type="range" name="interest" min="0" max="10">
+        </label>
+
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+        <legend><strong>Оцінка навичок</strong></legend>
+
+        <label>
+            Опишіть свої навички:<br>
+            <textarea name="skills" rows="5" cols="40"
+            placeholder="Перелічіть свої навички..."></textarea>
+        </label><br><br>
+
+        <label>
+            Завантажити резюме:<br>
+            <input type="file" name="resume">
+        </label><br><br>
+
+        <label>
+            Улюблений колір:<br>
+            <input type="color" name="color">
+        </label><br><br>
+
+        <label>
+            Бажаний час навчання:<br>
+            <input type="time" name="study_time">
+        </label>
+
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Надіслати анкету">
+
+</form>
+
+<p>© Студентська картка. Всі права захищені.</p>
+
+</body>
+</html>
