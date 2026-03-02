@@ -1,100 +1,139 @@
+/* ===========================
+   RESET & BASE
+   =========================== */
+*, *::before, *::after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* ===========================
+   CONTAINER
+   =========================== */
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ===========================
+   FEATURED HEADER
+   =========================== */
 #featured_container {
-  background: #e6e6e6 !important;
-  padding: 20px !important;
+  background: #C2C2C2;
+  display: block;
 }
 
-/* Контейнер */
-#featured_container .container {
-  max-width: 1240px !important;
-  width: 100% !important;
-  padding: 0 !important;
+#featured_container::before {
+  display: block;
+  width: 100%;
+  content: "";
+  height: 2px;
+  background-image: linear-gradient(to right, #979797 0%, #C2C2C2 50%, #979797 100%);
 }
 
-/* Ряд */
-#featured_container .views-view-grid > .row {
-  display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 20px !important;
-  margin: 0 0 20px 0 !important;
+/* ===========================
+   GRID
+   =========================== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
 }
 
-/* Колонки */
-#featured_container .views-view-grid > .row > .views-col {
-  flex: 0 0 calc(50% - 10px) !important;
-  max-width: calc(50% - 10px) !important;
-  padding: 0 !important;
+.col-12 {
+  width: 100%;
+  padding: 0 15px;
+  flex: 0 0 100%;
+  max-width: 100%;
 }
 
-/* Внутрішній блок */
-#featured_container .views-col > div {
-  position: relative !important;
-  overflow: hidden !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* Посилання */
-#featured_container .views-col a {
-  display: block !important;
-  position: relative !important;
-}
-
-/* Картинка */
-#featured_container .views-col img {
-  width: 100% !important;
-  height: 300px !important;
-  object-fit: cover !important;
-  display: block !important;
-  transition: transform .4s ease !important;
-}
-
-#featured_container .views-col a:hover img {
-  transform: scale(1.05);
-}
-
-/* Світле накриття */
-#featured_container .shadow_featured {
-  position: absolute !important;
-  inset: 0 !important;
-  background: rgba(255,255,255,0.35) !important;
-  z-index: 1 !important;
-}
-
-/* Заголовок */
-#featured_container .views-col h2 {
-  position: absolute !important;
-  left: 0 !important;
-  bottom: 25px !important;
-  margin: 0 !important;
-  padding: 10px 18px !important;
-  max-width: 85% !important;
-
-  background: #1c2a7c !important;
-  color: #fff !important;
-
-  font-size: 22px !important;
-  font-weight: 700 !important;
-  line-height: 1.3 !important;
-
-  z-index: 2 !important;
-}
-
-/* Мобільна версія */
-@media (max-width: 768px) {
-  #featured_container .views-view-grid > .row {
-    flex-direction: column !important;
+@media (min-width: 576px) {
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
+}
 
-  #featured_container .views-view-grid > .row > .views-col {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
+.views-col {
+  padding: 0 15px;
+}
 
-  #featured_container .views-col img {
-    height: 220px !important;
-  }
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
-  #featured_container .views-col h2 {
-    font-size: 18px !important;
-  }
+/* ===========================
+   NEWS CARD
+   =========================== */
+.views-col > div {
+  position: relative;
+  overflow: hidden;
+}
+
+.views-col > div a {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.img-responsive {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shadow_featured {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+  pointer-events: none;
+}
+
+/* ===========================
+   TITLE
+   =========================== */
+.views-col h2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 10px 15px;
+  font-size: 1.5rem;
+  font-weight: normal;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.views-col h2 span {
+  display: block;
 }
