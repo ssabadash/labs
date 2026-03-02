@@ -4,37 +4,43 @@ body {
     padding: 0;
 }
 
+/* HEADER */
 header {
     text-align: center;
-    background: #4CAF50;
+    background: #2e7d32;
     color: white;
-    padding: 10px 0;
-    /*position: VALUE;*/
+    padding: 15px 0;
+    position: fixed;
     top: 0;
-    /*z-index: VALUE;*/
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 section {
     padding: 20px;
+    margin-top: 80px;
 }
 
+/* Заголовки секцій */
 h2 {
-    /*position: VALUE;*/
-    /*top: VALUE;*/
-    background: #f9f9f9;
-    padding: 10px 0;
-    margin: 0;
-    /*z-index: VALUE;*/
-    border-bottom: 1px solid #ddd;
+    position: sticky;
+    top: 60px;
+    background: #f1f1f1;
+    padding: 10px;
+    margin: 0 0 15px 0;
+    z-index: 500;
+    border-bottom: 1px solid #ccc;
 }
 
 /* Секція 1 */
 #section-1 img {
-    /*float: VALUE;*/
+    float: left;
     margin-right: 20px;
+    margin-bottom: 10px;
     width: 250px;
     height: 250px;
+    background: #2e7d32;
 }
 
 .text {
@@ -42,7 +48,7 @@ h2 {
 }
 
 .clear {
-    /*clear: VALUE;*/
+    clear: both;
 }
 
 /* Секція 2 */
@@ -51,55 +57,63 @@ h2 {
     column-gap: 20px;
 }
 
-/* Планшети (Великі екрани): до 1024px */
-/* Текст у 2 колонки */
+/* Планшети до 1024px — 2 колонки */
+@media (max-width: 1024px) {
+    .multicolumn-text {
+        column-count: 2;
+    }
+}
 
-/* Екрани до 768px */
-/* Текст у 1 колонку */
+/* Екрани до 768px — 1 колонка */
+@media (max-width: 768px) {
+    .multicolumn-text {
+        column-count: 1;
+    }
+}
 
-
-/* Секція 3 */
+/* Кнопка */
 #subscribe-button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #4CAF50;
+    background-color: #2e7d32;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 #subscribe-button:hover {
-    background-color: #45a049;
+    background-color: #256428;
 }
 
 /* Модальне вікно */
 #modal.hidden {
-    /*display: VALUE*/
+    display: none;
 }
 
 #modal {
-    /*position: VALUE;*/
-    /*top: VALUE;*/
-    /*left: VALUE;*/
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
-    /*z-index: VALUE;*/
+    z-index: 2000;
 }
 
 .modal-content {
     background: white;
     width: 50%;
-    height: 50%;
-    padding: 20px;
+    max-width: 600px;
+    padding: 30px;
     border-radius: 5px;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
+/* Input */
 input[type="email"] {
     padding: 10px;
     width: 80%;
@@ -108,10 +122,15 @@ input[type="email"] {
     box-sizing: border-box;
 }
 
+/* Submit */
 button[type="submit"] {
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: #2e7d32;
     color: white;
     border: none;
     cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #256428;
 }
