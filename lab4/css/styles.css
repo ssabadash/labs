@@ -1,3 +1,29 @@
-body {
-    background: red !important;
+#featured_container {
+    background: #C2C2C2;
+    padding: 40px 0;
+}
+
+.views-view-grid .row {
+    margin-bottom: 30px;
+}
+
+.views-view-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.views-view-grid h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: #1f2f6f;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 20px;
+    max-width: 80%;
+}
+
+.views-view-grid .views-col > div {
+    position: relative;
 }
