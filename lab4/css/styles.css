@@ -3,7 +3,7 @@
    ============================================= */
 
 #featured_container {
-  background-color: #c5c5c5;
+  background-color: #ffffff;
   padding: 20px 0;
 }
 
@@ -38,6 +38,8 @@
   line-height: 0;
   overflow: hidden;
   background: #ddd;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
 }
 
 /* ── Link block ── */
@@ -68,8 +70,8 @@
   inset: 0;
   background: linear-gradient(
     to bottom,
-    transparent 35%,
-    rgba(0, 0, 30, 0.45) 100%
+    transparent 40%,
+    rgba(0, 0, 30, 0.65) 100%
   );
   pointer-events: none;
   z-index: 1;
@@ -82,13 +84,13 @@
   left: 0;
   z-index: 2;
   margin: 0;
-  padding: 7px 12px 10px;
-  max-width: 72%;
-  background-color: rgba(18, 30, 98, 0.85);
+  padding: 8px 14px 12px;
+  max-width: 70%;
+  background-color: rgba(13, 24, 85, 0.88);
   font-family: Arial, 'Noto Sans', sans-serif;
   font-size: 14.5px;
   font-weight: 700;
-  line-height: 1.35;
+  line-height: 1.4;
   color: #ffffff;
   letter-spacing: 0.01em;
 }
