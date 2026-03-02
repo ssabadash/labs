@@ -120,6 +120,9 @@ footer, header, hgroup, main, menu, nav, section, summary {
 
 html {
   font-size: 10px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -132,89 +135,125 @@ body {
   padding: 0;
 }
 
-/* CONTAINER */
+/* ===========================
+   CONTAINER / LAYOUT
+   =========================== */
 .container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-/* SECTION */
-.news-section {
-  padding: 20px 0 40px;
+.main-container {
+  background: #f5f5f5;
+  padding: 20px 0;
 }
 
-/* ЗАГОЛОВОК */
-.section-title {
-  font-size: 1.8rem;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -8px;
+}
+
+.col-sm-12 {
+  width: 100%;
+  padding: 0 8px;
+}
+
+/* ===========================
+   ЗАГОЛОВОК СЕКЦІЇ
+   =========================== */
+.view-header h2 {
+  font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  color: #333;
 }
 
-.section-title a {
+.view-header h2 a {
   color: #0057a8;
   text-decoration: underline;
 }
 
-.section-title a:hover {
+.view-header h2 a:hover {
   color: #003d7a;
 }
 
-/* СІТКА */
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
+/* ===========================
+   СІТКА КАРТОК
+   =========================== */
+.views-view-grid .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -6px 12px -6px;
 }
 
-@media (max-width: 992px) {
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
+.col-md-3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 0 6px;
+}
+
+.col-sm-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media (max-width: 991px) {
+  .col-md-3 {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 12px;
   }
 }
 
-@media (max-width: 576px) {
-  .news-grid {
-    grid-template-columns: 1fr;
+@media (max-width: 575px) {
+  .col-md-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 
-/* КАРТКА */
-.news-card {
+/* ===========================
+   КАРТКА НОВИНИ
+   =========================== */
+.views-col > div {
   background: #fff;
   border: 1px solid #e0e0e0;
-  overflow: hidden;
+  height: 100%;
 }
 
-.news-card a {
+.views-col > div > span > a {
   display: block;
   text-decoration: none;
   color: inherit;
+  height: 100%;
 }
 
-.news-card a:hover .news-title {
+.views-col > div > span > a:hover h3 {
   color: #0057a8;
   text-decoration: underline;
 }
 
-/* ФОТО */
-.news-img-wrap {
+/* ===========================
+   ФОТО + ДАТА
+   =========================== */
+.news_teaser {
   position: relative;
   width: 100%;
-  height: 160px;
   overflow: hidden;
 }
 
-.news-img-wrap img {
+.news_teaser img.img-responsive {
   display: block;
   width: 100%;
-  height: 100%;
+  height: 160px;
   object-fit: cover;
 }
 
-/* ДАТА */
-.news-date {
+.news_teaser span {
+  display: block;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -222,13 +261,103 @@ body {
   color: #fff;
   font-size: 1.1rem;
   padding: 3px 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
-/* ТЕКСТ */
-.news-title {
+/* ===========================
+   ЗАГОЛОВОК КАРТКИ
+   =========================== */
+.views-col h3 {
   margin: 0;
   padding: 10px 12px 14px;
   font-size: 1.3rem;
+  font-weight: 400;
   line-height: 1.4;
   color: #0057a8;
+}
+
+/* ===========================
+   ПРИХОВАНИЙ СПИСОК СТАТЕЙ
+   =========================== */
+.view-frontpage {
+  display: none;
+}
+
+/* ===========================
+   ПАГІНАЦІЯ
+   =========================== */
+.pager-nav {
+  text-align: center;
+  margin: 24px 0 10px;
+}
+
+.pagination {
+  display: inline-flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 4px;
+}
+
+.pager__item a {
+  display: inline-block;
+  padding: 6px 12px;
+  font-size: 1.3rem;
+  color: #0057a8;
+  border: 1px solid #dee2e6;
+  background: #fff;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.pager__item a:hover {
+  background: #e9ecef;
+  color: #003d7a;
+}
+
+.pager__item.is-active a,
+.pager__item.active a {
+  background: #0057a8;
+  color: #fff;
+  border-color: #0057a8;
+  font-weight: 700;
+}
+
+/* ===========================
+   FEED ICONS
+   =========================== */
+.feed-icons {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.feed-icons a {
+  color: #0057a8;
+  text-decoration: none;
+}
+
+/* ===========================
+   CLEARFIX
+   =========================== */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.hidden {
+  display: none;
 }
