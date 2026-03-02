@@ -245,47 +245,6 @@ body {
 }
 
 /* ===========================
-   ПАГІНАЦІЯ
-   =========================== */
-.pager-nav {
-  text-align: center;
-  margin: 24px 0 10px;
-}
-
-.pagination {
-  display: inline-flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  gap: 4px;
-}
-
-.pager__item a {
-  display: inline-block;
-  padding: 6px 12px;
-  font-size: 1.3rem;
-  color: #0057a8;
-  border: 1px solid #dee2e6;
-  background: #fff;
-  text-decoration: none;
-  line-height: 1.4;
-}
-
-.pager__item a:hover {
-  background: #e9ecef;
-  color: #003d7a;
-}
-
-.pager__item.is-active a,
-.pager__item.active a {
-  background: #0057a8;
-  color: #fff;
-  border-color: #0057a8;
-  font-weight: 700;
-}
-
-/* ===========================
    СЛУЖБОВІ
    =========================== */
 .clearfix::after {
