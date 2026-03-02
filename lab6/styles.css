@@ -11,28 +11,17 @@ html {
 
 body {
   font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  line-height: 1.42857143;
+  font-size: 1.4rem;
+  line-height: 1.5;
   color: #333;
-  background-color: #fff;
+  background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
 
-article, aside, details, figcaption, figure,
-footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
-/* CONTAINER */
-.container {
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-/* FEATURED HEADER */
+/* ===========================
+   FEATURED HEADER (перший блок)
+   =========================== */
 #featured_container {
   background: #C2C2C2;
   display: block;
@@ -46,46 +35,46 @@ footer, header, hgroup, main, menu, nav, section, summary {
   background-image: linear-gradient(to right, #979797 0%, #C2C2C2 50%, #979797 100%);
 }
 
-/* GRID */
-.row {
+#featured_container .container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+#featured_container .row {
   display: flex;
   flex-wrap: wrap;
   margin: 0;
-  width: 100%;
 }
 
-/* ОБИДВІ КОЛОНКИ ЗАВЖДИ ПОРЯД */
-.col-12 {
+#featured_container .col-12 {
   flex: 0 0 50%;
   max-width: 50%;
-  padding: 4px;
+  padding: 3px;
 }
 
-/* NEWS CARD */
-.views-col > div {
+#featured_container .views-col > div {
   position: relative;
   overflow: hidden;
-  width: 100%;
-  height: 220px;
+  height: 200px;
 }
 
-.views-col > div a {
+#featured_container .views-col > div a {
   display: block;
-  position: relative;
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: inherit;
+  color: #fff;
 }
 
-.img-responsive {
+#featured_container .img-responsive {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
 }
 
-.shadow_featured {
+#featured_container .shadow_featured {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -96,60 +85,34 @@ footer, header, hgroup, main, menu, nav, section, summary {
   z-index: 1;
 }
 
-/* TITLE */
-.views-col h2 {
+#featured_container h2 {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   margin: 0;
   padding: 10px 15px;
-  font-size: 1.3rem;
-  font-weight: normal;
+  font-size: 1.4rem;
+  font-weight: 600;
   color: #fff;
   line-height: 1.3;
   z-index: 2;
 }
 
-.views-col h2 span {
+#featured_container h2 span {
   display: block;
-}
-*, *::before, *::after {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 10px;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.4rem;
-  line-height: 1.5;
-  color: #333;
-  background-color: #f5f5f5;
-  margin: 0;
-  padding: 0;
 }
 
 /* ===========================
-   CONTAINER / LAYOUT
+   КОНТЕЙНЕР НОВИН (другий блок)
    =========================== */
-.container {
+.main-container {
   max-width: 1170px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 20px 15px;
 }
 
-.main-container {
-  background: #f5f5f5;
-  padding: 20px 0;
-}
-
-.row {
+.main-container > .row {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -8px;
@@ -161,7 +124,7 @@ body {
 }
 
 /* ===========================
-   ЗАГОЛОВОК СЕКЦІЇ
+   ЗАГОЛОВОК СЕКЦІЇ НОВИН
    =========================== */
 .view-header h2 {
   font-size: 2rem;
@@ -181,7 +144,7 @@ body {
 }
 
 /* ===========================
-   СІТКА КАРТОК
+   СІТКА КАРТОК НОВИН
    =========================== */
 .views-view-grid .row {
   display: flex;
@@ -189,19 +152,14 @@ body {
   margin: 0 -6px 12px -6px;
 }
 
-.col-md-3 {
+.views-view-grid .col-md-3 {
   flex: 0 0 25%;
   max-width: 25%;
   padding: 0 6px;
 }
 
-.col-sm-6 {
-  flex: 0 0 50%;
-  max-width: 50%;
-}
-
 @media (max-width: 991px) {
-  .col-md-3 {
+  .views-view-grid .col-md-3 {
     flex: 0 0 50%;
     max-width: 50%;
     margin-bottom: 12px;
@@ -209,7 +167,7 @@ body {
 }
 
 @media (max-width: 575px) {
-  .col-md-3 {
+  .views-view-grid .col-md-3 {
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -218,26 +176,27 @@ body {
 /* ===========================
    КАРТКА НОВИНИ
    =========================== */
-.views-col > div {
+.views-view-grid .views-col > div {
   background: #fff;
   border: 1px solid #e0e0e0;
   height: 100%;
+  position: static;
+  overflow: visible;
 }
 
-.views-col > div > span > a {
+.views-view-grid .views-col > div > span > a {
   display: block;
   text-decoration: none;
   color: inherit;
-  height: 100%;
 }
 
-.views-col > div > span > a:hover h3 {
-  color: #0057a8;
+.views-view-grid .views-col > div > span > a:hover h3 {
+  color: #003d7a;
   text-decoration: underline;
 }
 
 /* ===========================
-   ФОТО + ДАТА
+   ФОТО + ДАТА В КАРТЦІ
    =========================== */
 .news_teaser {
   position: relative;
@@ -268,17 +227,18 @@ body {
 /* ===========================
    ЗАГОЛОВОК КАРТКИ
    =========================== */
-.views-col h3 {
+.views-view-grid .views-col h3 {
   margin: 0;
   padding: 10px 12px 14px;
   font-size: 1.3rem;
   font-weight: 400;
   line-height: 1.4;
   color: #0057a8;
+  position: static;
 }
 
 /* ===========================
-   ПРИХОВАНИЙ СПИСОК СТАТЕЙ
+   ПРИХОВАТИ СПИСОК СТАТЕЙ
    =========================== */
 .view-frontpage {
   display: none;
@@ -326,22 +286,7 @@ body {
 }
 
 /* ===========================
-   FEED ICONS
-   =========================== */
-.feed-icons {
-  text-align: center;
-  margin-top: 10px;
-  font-size: 1.2rem;
-  color: #888;
-}
-
-.feed-icons a {
-  color: #0057a8;
-  text-decoration: none;
-}
-
-/* ===========================
-   CLEARFIX
+   СЛУЖБОВІ
    =========================== */
 .clearfix::after {
   content: "";
@@ -360,4 +305,15 @@ body {
 
 .hidden {
   display: none;
+}
+
+.feed-icons {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.feed-icons a {
+  color: #0057a8;
+  text-decoration: none;
 }
