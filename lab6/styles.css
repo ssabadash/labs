@@ -124,124 +124,82 @@ body {
 }
 
 /* ===========================
-   ЗАГОЛОВОК СЕКЦІЇ НОВИН
+   СЕКЦІЯ НОВИН
    =========================== */
-.view-header h2 {
-  font-size: 2rem;
-  font-weight: 700;
+#news-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 10px;
+}
+
+.news-title {
   text-align: center;
-  margin: 0 0 20px 0;
-  color: #333;
-}
-
-.view-header h2 a {
-  color: #0057a8;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  color: #337ab7;
   text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 7px;
 }
 
-.view-header h2 a:hover {
-  color: #003d7a;
-}
-
-/* ===========================
-   СІТКА КАРТОК НОВИН
-   =========================== */
-.views-view-grid .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -6px 12px -6px;
-}
-
-.views-view-grid .col-md-3 {
-  flex: 0 0 25%;
-  max-width: 25%;
-  padding: 0 6px;
-}
-
-@media (max-width: 991px) {
-  .views-view-grid .col-md-3 {
-    flex: 0 0 50%;
-    max-width: 50%;
-    margin-bottom: 12px;
-  }
-}
-
-@media (max-width: 575px) {
-  .views-view-grid .col-md-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* ===========================
-   КАРТКА НОВИНИ
-   =========================== */
-.views-view-grid .views-col > div {
-  background: #fff;
-  border: 1px solid #e0e0e0;
-  height: 100%;
-  position: static;
-  overflow: visible;
-}
-
-.views-view-grid .views-col > div > span > a {
-  display: block;
-  text-decoration: none;
+.news-title a {
   color: inherit;
+  text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-.views-view-grid .views-col > div > span > a:hover h3 {
-  color: #003d7a;
-  text-decoration: underline;
+.news-title a:hover {
+  opacity: 0.6;
 }
 
-/* ===========================
-   ФОТО + ДАТА В КАРТЦІ
-   =========================== */
-.news_teaser {
-  position: relative;
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.news-card {
+  background: white;
+  border: 1px solid #eee;
+  transition: transform 0.3s;
+}
+
+.news-card img {
   width: 100%;
-  overflow: hidden;
-}
-
-.news_teaser img.img-responsive {
-  display: block;
-  width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
 }
 
-.news_teaser span {
-  display: block;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.55);
-  color: #fff;
-  font-size: 1.1rem;
-  padding: 3px 8px;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-/* ===========================
-   ЗАГОЛОВОК КАРТКИ
-   =========================== */
-.views-view-grid .views-col h3 {
+.news-card h3 {
+  font-size: 16px;
+  padding: 10px;
   margin: 0;
-  padding: 10px 12px 14px;
-  font-size: 1.3rem;
-  font-weight: 400;
-  line-height: 1.4;
-  color: #0057a8;
-  position: static;
 }
 
-/* ===========================
-   ПРИХОВАТИ СПИСОК СТАТЕЙ
-   =========================== */
-.view-frontpage {
-  display: none;
+.news-date {
+  display: block;
+  font-size: 13px;
+  color: #0076A8;
+  padding: 8px 10px 0 10px;
+}
+
+.news-card a {
+  text-decoration: none;
+  color: #0076A8;
+}
+
+@media (max-width: 1023px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===========================
