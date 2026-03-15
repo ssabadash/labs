@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Trivia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ══ HEADER ══ -->
+  <header>
+    <div class="header-inner">
+      <a href="#home" class="logo">World<span>Trivia</span></a>
+      <nav aria-label="Головна навігація">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#trivia">Trivia</a></li>
+          <li><a href="#categories">Categories</a></li>
+          <li><a href="#scores">Scores</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ══ MAIN ══ -->
+  <main>
+
+    <!-- HOME -->
+    <section id="home" aria-labelledby="home-heading">
+      <h1 id="home-heading">World Trivia</h1>
+      <p>
+        Ласкаво просимо до World Trivia — найкращої платформи для перевірки
+        знань з усіх куточків світу. Грайте, навчайтесь і змагайтеся з
+        гравцями з понад 100 країн. Щодня нові запитання та виклики!
+      </p>
+    </section>
+
+    <!-- TRIVIA -->
+    <section id="trivia" aria-labelledby="trivia-heading">
+      <h2 id="trivia-heading">Trivia</h2>
+      <div class="trivia-list">
+
+        <div class="trivia-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg/320px-Everest_North_Face_toward_Base_Camp_Tibet_Luca_Galuzzi_2006.jpg"
+            alt="Гора Еверест — найвища точка Землі"
+            width="150" height="110"
+          />
+          <div class="trivia-text">
+            <h3>🏔️ Найвища гора Землі</h3>
+            <p>
+              Еверест (8 849 м) — найвища вершина нашої планети. Першими її
+              підкорили Едмунд Гілларі і Тенцінг Норгей у 1953 році.
+            </p>
+          </div>
+        </div>
+
+        <div class="trivia-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Pacific_Ocean_-_en.png/320px-Pacific_Ocean_-_en.png"
+            alt="Карта Тихого океану"
+            width="150" height="110"
+          />
+          <div class="trivia-text">
+            <h3>🌊 Найбільший океан</h3>
+            <p>
+              Тихий океан займає понад 165 млн км² та є найглибшим:
+              Маріанська западина сягає 10 994 м.
+            </p>
+          </div>
+        </div>
+
+        <div class="trivia-item">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/320px-GoldenGateBridge-001.jpg"
+            alt="Міст Золоті Ворота у Сан-Франциско"
+            width="150" height="110"
+          />
+          <div class="trivia-text">
+            <h3>🌉 Міст Золоті Ворота</h3>
+            <p>
+              Відкритий у 1937 році, цей міст-символ Сан-Франциско має
+              довжину 2 737 м і висоту пілонів 227 м.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section id="categories" aria-labelledby="categories-heading">
+      <h2 id="categories-heading">Categories</h2>
+      <ul>
+        <li><a href="#trivia">🌍 Географія</a></li>
+        <li><a href="#trivia">🏛️ Історія</a></li>
+        <li><a href="#trivia">🔬 Наука</a></li>
+        <li><a href="#trivia">🎭 Мистецтво</a></li>
+        <li><a href="#trivia">⚽ Спорт</a></li>
+        <li><a href="#trivia">🎬 Кіно</a></li>
+        <li><a href="#trivia">🎵 Музика</a></li>
+        <li><a href="#trivia">🍽️ Їжа</a></li>
+        <li><a href="#trivia">💡 Технології</a></li>
+        <li><a href="#trivia">📚 Мови</a></li>
+      </ul>
+    </section>
+
+    <!-- SCORES -->
+    <section id="scores" aria-labelledby="scores-heading">
+      <h2 id="scores-heading">Scores</h2>
+      <table aria-label="Таблиця результатів гравців">
+        <thead>
+          <tr>
+            <th scope="col">Rank</th>
+            <th scope="col">Name</th>
+            <th scope="col">Score</th>
+            <th scope="col">Country</th>
+            <th scope="col">Category</th>
+            <th scope="col">Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="rank-badge rank-1" aria-label="1 місце">1</span></td>
+            <td>Olena Kovalenko</td>
+            <td>9 850</td>
+            <td>🇺🇦 Ukraine</td>
+            <td>Географія</td>
+            <td>2025-03-10</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-2" aria-label="2 місце">2</span></td>
+            <td>Ahmed Hassan</td>
+            <td>9 420</td>
+            <td>🇪🇬 Egypt</td>
+            <td>Історія</td>
+            <td>2025-03-09</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-3" aria-label="3 місце">3</span></td>
+            <td>Yuki Tanaka</td>
+            <td>9 100</td>
+            <td>🇯🇵 Japan</td>
+            <td>Наука</td>
+            <td>2025-03-08</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-other">4</span></td>
+            <td>Sofia Martins</td>
+            <td>8 760</td>
+            <td>🇧🇷 Brazil</td>
+            <td>Мистецтво</td>
+            <td>2025-03-07</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-other">5</span></td>
+            <td>Liam O'Brien</td>
+            <td>8 430</td>
+            <td>🇮🇪 Ireland</td>
+            <td>Спорт</td>
+            <td>2025-03-06</td>
+          </tr>
+          <tr>
+            <td><span class="rank-badge rank-other">6</span></td>
+            <td>Priya Sharma</td>
+            <td>8 150</td>
+            <td>🇮🇳 India</td>
+            <td>Кіно</td>
+            <td>2025-03-05</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section id="subscribe" aria-labelledby="subscribe-heading">
+      <h2 id="subscribe-heading">Subscribe</h2>
+      <p>Отримуйте «Puzzle of the Day» щодня прямо на пошту!</p>
+      <button class="btn-subscribe" type="button" aria-label="Підписатися на Puzzle of the Day">
+        🧩 Puzzle of the Day
+      </button>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <p>Маєте запитання або пропозиції? Напишіть нам — відповімо протягом 24 годин.</p>
+
+      <form action="#" method="post" novalidate>
+
+        <label for="name">Ім'я</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Введіть ваше ім'я"
+          required
+          autocomplete="given-name"
+          aria-required="true"
+        />
+
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+          aria-required="true"
+        />
+
+        <label for="message">Повідомлення</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Ваше повідомлення..."
+          required
+          aria-required="true"
+        ></textarea>
+
+        <button type="submit" class="btn-send">Надіслати</button>
+
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ══ FOOTER ══ -->
+  <footer>
+    <p>
+      &copy; 2025 <strong>World Trivia</strong> &mdash; Всі права захищено. |
+      <a href="https://validator.w3.org/" target="_blank" rel="noopener">W3C HTML</a> &bull;
+      <a href="https://jigsaw.w3.org/css-validator/" target="_blank" rel="noopener">CSS Validator</a>
+    </p>
+  </footer>
+
+</body>
+</html>
