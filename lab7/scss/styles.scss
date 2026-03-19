@@ -1,3 +1,40 @@
+// ===========================
+// 3.6 ЗМІННІ КОЛЬОРІВ
+// ===========================
+$primary-color:   #337ab7;
+$secondary-color: #0076A8;
+$text-color:      #333;
+
+// ===========================
+// 3.7 ЗМІННІ РОЗМІРІВ ШРИФТІВ
+// ===========================
+$font-size-base:    1.4rem;  // базовий розмір тексту body
+$font-size-sm:      1.2rem;  // дрібний текст (feed-icons)
+$font-size-news-date: 13px;  // дата новини
+$font-size-news-card: 16px;  // заголовок картки новини
+$font-size-news-title: 30px; // головний заголовок секції новин
+$font-size-featured-h2: 1.4rem; // заголовок featured-блоку
+
+// ===========================
+// 3.8 БРЕЙКПОІНТИ ТА МІКСИНА
+// ===========================
+$breakpoints: (
+  mobile:  576px,
+  tablet:  768px,
+  desktop: 1024px
+);
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+// ===========================
+// ГЛОБАЛЬНІ СКИДАННЯ
+// ===========================
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -11,111 +48,117 @@ html {
 
 body {
   font-family: 'Roboto', "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1.4rem;
+  font-size: $font-size-base;
   line-height: 1.5;
-  color: #333;
+  color: $text-color;
   background-color: #f5f5f5;
   margin: 0;
   padding: 0;
 }
 
-/* ===========================
-   FEATURED HEADER (перший блок)
-   =========================== */
+// ===========================
+// FEATURED HEADER (перший блок)
+// ===========================
 #featured_container {
   background: #C2C2C2;
   display: block;
+
+  &::before {
+    display: block;
+    width: 100%;
+    content: "";
+    height: 2px;
+    background-image: linear-gradient(to right, #979797 0%, #C2C2C2 50%, #979797 100%);
+  }
+
+  .container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+
+  .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 3px;
+
+    // Планшет: два стовпці
+    @include respond-to(tablet) {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+  }
+
+  .views-col > div {
+    position: relative;
+    overflow: hidden;
+    height: 200px;
+
+    a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  .img-responsive {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .shadow_featured {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  h2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 15px;
+    font-size: $font-size-featured-h2;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.3;
+    z-index: 2;
+
+    span {
+      display: block;
+    }
+  }
 }
 
-#featured_container::before {
-  display: block;
-  width: 100%;
-  content: "";
-  height: 2px;
-  background-image: linear-gradient(to right, #979797 0%, #C2C2C2 50%, #979797 100%);
-}
-
-#featured_container .container {
-  max-width: 1170px;
-  margin: 0 auto;
-  padding: 0;
-}
-
-#featured_container .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0;
-}
-
-#featured_container .col-12 {
-  flex: 0 0 50%;
-  max-width: 50%;
-  padding: 3px;
-}
-
-#featured_container .views-col > div {
-  position: relative;
-  overflow: hidden;
-  height: 200px;
-}
-
-#featured_container .views-col > div a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #fff;
-}
-
-#featured_container .img-responsive {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-#featured_container .shadow_featured {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 70%;
-  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0) 100%);
-  pointer-events: none;
-  z-index: 1;
-}
-
-#featured_container h2 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0;
-  padding: 10px 15px;
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #fff;
-  line-height: 1.3;
-  z-index: 2;
-}
-
-#featured_container h2 span {
-  display: block;
-}
-
-/* ===========================
-   КОНТЕЙНЕР НОВИН (другий блок)
-   =========================== */
+// ===========================
+// КОНТЕЙНЕР НОВИН (другий блок)
+// ===========================
 .main-container {
   max-width: 1170px;
   margin: 0 auto;
   padding: 20px 15px;
-}
 
-.main-container > .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -8px;
+  > .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -8px;
+  }
 }
 
 .col-sm-12 {
@@ -123,9 +166,9 @@ body {
   padding: 0 8px;
 }
 
-/* ===========================
-   СЕКЦІЯ НОВИН
-   =========================== */
+// ===========================
+// СЕКЦІЯ НОВИН
+// ===========================
 #news-section {
   max-width: 1200px;
   margin: 40px auto;
@@ -134,77 +177,76 @@ body {
 
 .news-title {
   text-align: center;
-  font-size: 30px;
+  font-size: $font-size-news-title;
   font-family: Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
-  color: #337ab7;
+  color: $primary-color;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 7px;
-}
 
-.news-title a {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s ease;
 
-.news-title a:hover {
-  opacity: 0.6;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr; // mobile: один стовпець
+
   gap: 20px;
+
+  // Планшет: два стовпці
+  @include respond-to(tablet) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  // Десктоп: чотири стовпці
+  @include respond-to(desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .news-card {
   background: white;
   border: 1px solid #eee;
   transition: transform 0.3s;
-}
 
-.news-card img {
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-}
+  img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
 
-.news-card h3 {
-  font-size: 16px;
-  padding: 10px;
-  margin: 0;
+  h3 {
+    font-size: $font-size-news-card;
+    padding: 10px;
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: $secondary-color;
+  }
 }
 
 .news-date {
   display: block;
-  font-size: 13px;
-  color: #0076A8;
+  font-size: $font-size-news-date;
+  color: $secondary-color;
   padding: 8px 10px 0 10px;
 }
 
-.news-card a {
-  text-decoration: none;
-  color: #0076A8;
-}
-
-@media (max-width: 1023px) {
-  .news-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .news-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===========================
-   СЛУЖБОВІ
-   =========================== */
+// ===========================
+// СЛУЖБОВІ
+// ===========================
 .clearfix::after {
   content: "";
   display: table;
@@ -227,10 +269,10 @@ body {
 .feed-icons {
   text-align: center;
   margin-top: 10px;
-  font-size: 1.2rem;
-}
+  font-size: $font-size-sm;
 
-.feed-icons a {
-  color: #0057a8;
-  text-decoration: none;
+  a {
+    color: $primary-color;
+    text-decoration: none;
+  }
 }
