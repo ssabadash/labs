@@ -368,9 +368,6 @@ a {
     line-height: 1.1;
     color: var(--color-dark);
     margin-bottom: 20px;
-    text-decoration: underline;
-    text-decoration-color: #7B5CF0;
-    text-underline-offset: 6px;
 }
 
 .cta__desc {
