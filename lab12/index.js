@@ -4,11 +4,11 @@ import { Teacher } from "./models/Teacher.js";
 import { Student } from "./models/Student.js";
 
 // --- Створення об'єктів ---
-const teacher = new Teacher("Іван Петренко");
-const student1 = new Student("Оля Коваль");
-const student2 = new Student("Максим Бондар");
+const teacher = new Teacher("Тупичак Ігор Володимирович");
+const student1 = new Student("Сабадаш Сергій");
+const student2 = new Student("Федунь Юрій");
 
-const course1 = new Course("JavaScript основи");
+const course1 = new Course("Програмування в Internet");
 const course2 = new Course("HTML та CSS");
 
 // --- Демонстрація роботи ---
