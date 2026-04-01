@@ -1,7 +1,7 @@
-import { Person } from "./models/person.js";
-import { Course } from "./models/course.js";
-import { Teacher } from "./models/teacher.js";
-import { Student } from "./models/student.js";
+import { Person } from "./models/Person.js";
+import { Course } from "./models/Course.js";
+import { Teacher } from "./models/Teacher.js";
+import { Student } from "./models/Student.js";
 
 // --- Створення об'єктів ---
 const teacher = new Teacher("Іван Петренко");

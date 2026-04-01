@@ -1,4 +1,4 @@
-import { Person } from "./person.js";
+import { Person } from "./Person.js";
 
 export class Teacher extends Person {
     constructor(name) {
